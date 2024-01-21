@@ -1,11 +1,20 @@
-import React, { useRef, useState } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { Canvas } from '@react-three/fiber';
+import Fox from '../models/Fox'
+import Loader from '../components/Loader';
+import Alert from '../components/Alert';
 
 const Contact = () => {
   const formRef = useRef(null); 
   const [form, setForm] = useState({name:'', email:'', message:''})
   //when page is loading, dont show form
   const [isLoading, setIsLoading] = useState(false)
+  //animation states
+  const [currentAnimation, setCurrentAnimation] = useState('idle')
+
+  //alerts
+  const {alert, showAlert, hideAlert} = useAlert();
 
   //functions for event handling
   //updates form
@@ -13,15 +22,13 @@ const Contact = () => {
     setForm({...form, [e.target.name]: e.target.value})
   };
 
-  const handleFocus = () => {};
-  const handleBlur = () => {};
-
-
   const handleSubmit = (e) => {
     //prevents page from resetting after form submission
     e.preventDefault();
     //while user sending email
     setIsLoading(true);
+    //make fox run when submitting form
+    setCurrentAnimation('hit');
 
     //lets user send email to you
     emailjs.send(
@@ -39,19 +46,37 @@ const Contact = () => {
       //after email is sent, no longer loading
       setIsLoading(false);
       //TODO: SHOW SUCCESS MESSAGE
-      //TODO: HIDE AN ALERT
+      showAlert({show:true, text:'Message sent successfully!', type:'success'})
+
+      //stop fox running after sent
+      setTimeout(() => {
+        //TODO: HIDE AN ALERT
+        hideAlert();
+        setCurrentAnimation('idle');
+        setForm({name:'', email:'', message:''});
+      }, [3000])
 
       //clear form after sent
       setForm({name: '', email: '', message: ''});
     }).catch((error) => {
       setIsLoading(false);
+      setCurrentAnimation('idle');
       console.log(error);
       //TODO: ERROR MSG
+      showAlert({show:true, text:'Message not received', type:'danger'})
     })
   };
 
+  //for form interaction with fox
+  const handleFocus = () => setCurrentAnimation('walk');
+  const handleBlur = () => setCurrentAnimation('idle');
+
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
+      {/* alert */}
+      {/* if alert.show is true, pass Alert component */}
+      {alert.show && <Alert {...alert}/>}
+
       <div className='flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>
           Get in Touch
@@ -117,9 +142,35 @@ const Contact = () => {
             {isLoading ? 'Sending your message...' : 'Send my message'}
           </button>
         </form>
-
-
       </div>
+
+      {/* lg = on large devices
+      md = on medium devices */}
+      <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
+        <Canvas
+          camera={{
+            position: [0,0,5],
+            //fov= field of view
+            fov: 75,
+            near: 0.1,
+            far:1000
+          }}
+        >
+          <directionalLight intensity={2.5} position={[0, 0, 1]}/>
+          <ambientLight intensity={0.5}/>
+          {/* loads fox in */}
+          <Suspense fallback={<Loader/>}>
+            <Fox 
+              currentAnimation={currentAnimation}
+              position={[0.5, 0.35, 0]}
+              rotation={[12.6,-0.6,0]}
+              scale={[0.5,0.5,0.5]}
+            />
+          </Suspense>
+
+        </Canvas>
+      </div>
+
     </section>
   )
 }
