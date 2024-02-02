@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import Fox from '../models/Fox'
 import Loader from '../components/Loader';
 import Alert from '../components/Alert';
+import useAlert from '../hooks/useAlert';
 
 const Contact = () => {
   const formRef = useRef(null); 
@@ -37,7 +38,7 @@ const Contact = () => {
       {
         from_name: form.name,
         to_name: "Inez",
-        from_email: "form.email",
+        from_email: form.email,
         to_email: "inezchong7@gmail.com",
         message: form.message
       },
@@ -48,10 +49,10 @@ const Contact = () => {
       //TODO: SHOW SUCCESS MESSAGE
       showAlert({show:true, text:'Message sent successfully!', type:'success'})
 
-      //stop fox running after sent
+      //stop fox running after sent and alert message displayed
       setTimeout(() => {
         //TODO: HIDE AN ALERT
-        hideAlert();
+        hideAlert(false);
         setCurrentAnimation('idle');
         setForm({name:'', email:'', message:''});
       }, [3000])
@@ -68,7 +69,9 @@ const Contact = () => {
   };
 
   //for form interaction with fox
+  //handleFocus = when typing in input boxes, fox walk
   const handleFocus = () => setCurrentAnimation('walk');
+  //click out of/ when stop typing in input box, fox stop
   const handleBlur = () => setCurrentAnimation('idle');
 
   return (
@@ -97,6 +100,8 @@ const Contact = () => {
               required
               value={form.name}
               onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
             />
           </label>
 

@@ -26,6 +26,8 @@ const renderContent = {
             Hi! I'm <span className='font-semibold'>Inez</span> 👩🏻‍💻
             <br />
             A Master of IT student in NZ 🌏
+            <br/>
+            (Rotate the island to find out more 👉🏻)
         </h1>
         ),
     2: (
