@@ -75,7 +75,7 @@ const Contact = () => {
   const handleBlur = () => setCurrentAnimation('idle');
 
   return (
-    <section className='relative flex lg:flex-row flex-col max-container'>
+    <section className='relative flex lg:flex-row flex-col max-container h-[100vh]'>
       {/* alert */}
       {/* if alert.show is true, pass Alert component */}
       {alert.show && <Alert {...alert}/>}
