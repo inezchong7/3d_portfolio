@@ -1,4 +1,10 @@
 import { meta, shopify, starbucks, tesla } from "../assets/images";
+import sparklehaze from '../assets/images/sparklehaze.png';
+import asureQuality from '../assets/images/asureQuality.png';
+import mitre10 from '../assets/images/mitre10.png';
+import chemist from '../assets/images/chemist.png';
+
+
 import {
     car,
     contact,
@@ -25,6 +31,24 @@ import {
     threads,
     typescript,
 } from "../assets/icons";
+
+import angular from "../assets/icons/angular.svg";
+import aws from "../assets/icons/aws.svg";
+import bash from "../assets/icons/bash.svg";
+import firebase from "../assets/icons/firebase.svg";
+import java from "../assets/icons/java.svg";
+import linux from "../assets/icons/linux.svg";
+import python from "../assets/icons/python.svg";
+
+import envelopepaperheart from "../assets/icons/envelopepaperheart.svg";
+import globe2 from "../assets/icons/globe2.svg";
+import blockquoteleft from "../assets/icons/blockquoteleft.svg";
+import personlinesfill from "../assets/icons/personlinesfill.svg";
+import joystick from "../assets/icons/joystick.svg";
+import key from "../assets/icons/key.svg";
+import incognito from "../assets/icons/incognito.svg";
+import clipboarddata from "../assets/icons/clipboarddata.svg";
+
 
 export const skills = [
     {
@@ -67,19 +91,49 @@ export const skills = [
         name: "Tailwind CSS",
         type: "Frontend",
     },
-    // {
-    //     imageUrl: angular,
-    //     name: "Angular",
-    //     type: "FrontEnd",
-    // },
+    {
+        imageUrl: angular,
+        name: "Angular",
+        type: "FrontEnd",
+    },    
+    {
+        imageUrl:aws ,
+        name: "AWS",
+        type: "Cloud",
+    },
+    {
+        imageUrl: bash,
+        name: "Bash",
+        type: "Scripting",
+    },
+    {
+        imageUrl: firebase,
+        name: "Firebase",
+        type: "Cloud",
+    },
+    {
+        imageUrl: java,
+        name: "Java",
+        type: "BackEnd",
+    },
+    {
+        imageUrl: linux,
+        name: "Linux",
+        type: "Scripting",
+    },
+    {
+        imageUrl: python,
+        name: "Python",
+        type: "BackEnd",
+    },
 ];
 
 export const experiences = [
     {
         title: "Web Developer (Intern)",
         company_name: "SparkleHaze",
-        icon: '',
-        iconBg: "#f8d2fc",
+        icon: sparklehaze,
+        iconBg: "#F7F7F7",
         date: "Nov 2023 - present",
         points: [
             "Developing and maintaining web applications using Angular and other related technologies.",
@@ -91,8 +145,8 @@ export const experiences = [
     {
         title: "Laboratory Technician",
         company_name: "AsureQuality",
-        icon: '',
-        iconBg: "#b7e4c7",
+        icon: asureQuality,
+        iconBg: "#Ffffff",
         date: "Nov 2022 - Jun 2023",
         points: [
             "Performed laboratory testing and analyses following established protocols and procedures.", 
@@ -111,8 +165,8 @@ export const experiences = [
     {
         title: "Retail Assistant, Flooring Department",
         company_name: "Mitre 10 Mega",
-        icon: '',
-        iconBg: "#fae787",
+        icon: mitre10,
+        iconBg: "#Ffffff",
         date: "Feb 2021 - Apr 2022",
         points: [
             "Assisted customers in making informed decisions by providing accurate product details, explaining pricing and warranties, and suggesting suitable flooring options based on preferences, budget, and lifestyle.",  
@@ -129,8 +183,8 @@ export const experiences = [
     {
         title: "Team Supervisor, Online Warehouse Operations",
         company_name: "Chemist Warehouse",
-        icon: '',
-        iconBg: "#cafaf9",
+        icon: chemist,
+        iconBg: "#Ffffff",
         date: "March 2020 - Feb 2021",
         points: [
             "Supervised and led a team of warehouse staff, including assigned tasks, provided training, and conducted performance evaluations. Ensured that the team followed safety protocols and complied with operational procedures.", 
@@ -145,8 +199,8 @@ export const experiences = [
     {
         title: "Online Assistant, Online Warehouse Operations",
         company_name: "Chemist Warehouse",
-        icon: '',
-        iconBg: "#cafaf9",
+        icon: chemist,
+        iconBg: "#Ffffff",
         date: "Jan 2020 - Mar 2020",
         points: [
             "Received and processed customer orders, ensuring timely fulfillment and accurate picking and packing of items.", 
@@ -159,8 +213,8 @@ export const experiences = [
     {
         title: "Pharmacy Retail Assistant ",
         company_name: "Chemist Warehouse",
-        icon: '',
-        iconBg: "#cafaf9",
+        icon: chemist,
+        iconBg: "#Ffffff",
         date: "Aug 2019 - Jan 2020",
         points: [
             "Helped customers find specific products, explained medication instructions, and offered advice on over-the-counter remedies.", 
@@ -198,45 +252,59 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
-    },
-    {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car,
+        iconUrl: envelopepaperheart,
         theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'Online Wedding Invitation (Ongoing)',
+        description: 'A customised web wedding invitaion that also collects guest information for further wedding planning.',
+        link: '',
     },
     {
-        iconUrl: snapgram,
+        iconUrl: globe2,
+        theme: 'btn-back-blue',
+        name: '3D Web Portfolio',
+        description: 'A web application that gives users an overview of my portfolio, while also showcases the manipulation and staging of 3D models using React packages and related technologies.',
+        link: 'https://github.com/inezchong7/3d_portfolio/tree/main',
+    },
+    {
+        iconUrl: blockquoteleft,
+        theme: 'btn-back-blue',
+        name: 'Blogging Web Platform',
+        description: 'Developed a web application for blog posting, facilitating content searches and connecting readers with writers.',
+        link: 'https://github.com/UOA-PGCIT-FULLTIME/group-2-s2-23-v1',
+    },
+    {
+        iconUrl: personlinesfill,
+        theme: 'btn-back-green',
+        name: 'Blogging Platform Admin Interface',
+        description: 'A Java Swing-based application that allows administration to view and make executive decisions about existing blog users.',
+        link: 'https://github.com/UOA-PGCIT-FULLTIME/group-2-s2-23-v1',
+    },
+    {
+        iconUrl: joystick,
+        theme: 'btn-back-green',
+        name: 'Bulls & Cows Game with AI',
+        description: 'A classic guessing game implemented in Java. The game includes three different levels of AI components, allowing the computer to generate its secret code and respond to the players guesses, making the game challenging and entertaining.',
+        link: 'https://github.com/UOA-PGCIT-FULLTIME/industry-bulls-and-cows-assignment-s2-2023-inezchong7',
+    },
+    {
+        iconUrl: key,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        name: 'Keylogger',
+        description: 'A simple Python-based program that records every keystroke made on keyboards.',
+        link: 'https://github.com/inezchong7/Keylogger',
     },
     {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        iconUrl: clipboarddata,
+        theme: 'btn-back-pink',
+        name: 'Botium Toys Security Audit',
+        description: 'This is a fictional security audit based on the fictional company Botium Toys in the Google Coursera Cybersecurity Professional Certification.',
+        link: 'https://github.com/inezchong7/Botium-Toys-security-audit-/tree/main',
     },
     {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
+        iconUrl: incognito,
+        theme: 'btn-back-pink',
+        name: 'DATACOM Cybersecurity Risk Assessment',
+        description: 'Investigated a cyberattack and produced a comprehensive report documenting findings and outlining key recommendations to improve clients cybersecurity posture.',
+        link: '',
+    },
 ];
