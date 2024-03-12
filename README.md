@@ -4,6 +4,11 @@
 <p>I decided to follow along with this tutorial for two reasons: (1) to learn and familiarise myself with popular web frameworks and increase my skills/ knowledge, and (2) to gain exposure to working with 3D models for enhanced web design. Even though this was a guided process, I still spent my fair share of time troubleshooting and debugging the application to ensure smooth operation. </p>
 <p>(*code is on my master branch)</p>
 
+<h2>Setup for local host</h2>
+<ol>
+  <li>npm install</li>
+  <li>npm run dev></li>
+</ol>
 
 <h2> 💻Technologies used </h2>
 <ul>
